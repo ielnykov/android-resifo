@@ -5,7 +5,7 @@ for a residence registration form.
 
 ## Mock-Ups
 
-The Mock-Ups are to be found [here](./mockups/index.html)
+The preview of Mock-Ups are to be found at ```./mockups/index.html```
 
 ## How to set up the project
 
