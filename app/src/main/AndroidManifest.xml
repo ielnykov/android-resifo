@@ -3,6 +3,7 @@
     package="at.fh.valuvi.resifo">
 
     <application
+        android:name="at.fh.valuvi.resifo.components.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
