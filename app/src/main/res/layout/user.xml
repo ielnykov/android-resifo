@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/user"
+        android:id="@+id/imageView" />
+
+    <EditText
+        android:text="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userHeading"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:text="Last Name:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_weight="6.69"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewUsername" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:text="E-Mail:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_weight="1"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewPassword"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:text="Change Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/changePassword" />
+
+
+</LinearLayout>

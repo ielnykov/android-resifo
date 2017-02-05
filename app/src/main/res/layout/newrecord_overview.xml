@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="New\nRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView36"
+            android:textAlignment="center"
+            android:textSize="56sp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:text="\t\t\t\t\t\t\t\t\t\t\t\t\t\t1: Personal Information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:background="@mipmap/user_small_wide4"
+            android:textAlignment="textStart"
+            android:onClick="personalInfo" />
+
+        <Button
+            android:text="\t\t\t\t\t\t\t\t\t\t\t\t\t\t2: New Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5"
+            android:background="@mipmap/new_address_wide4"
+            android:textAlignment="viewStart"
+            android:onClick="registration" />
+
+        <Button
+            android:text="\t\t\t\t\t\t\t\t\t\t\t\t\t\t3: Old Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button6"
+            android:background="@mipmap/old_address_wide4"
+            android:textAlignment="viewStart"
+            android:onClick="cancellation" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:layout_marginBottom="10dp">
+
+        <Button
+            android:text="Create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button7"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:onClick="create" />
+    </LinearLayout>
+
+</LinearLayout>
