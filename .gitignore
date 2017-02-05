@@ -1,2 +1,4 @@
-# idea temporary directory
-.idea
+/.idea
+/local.properties
+/.gradle
+/build
