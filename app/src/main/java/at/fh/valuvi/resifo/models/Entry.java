@@ -1,8 +1,11 @@
 package at.fh.valuvi.resifo.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import at.fh.valuvi.resifo.components.BaseModel;
 
-public class Entry {
+public class Entry extends BaseModel {
 
     public Integer entryId;
     public Integer userID;
@@ -21,7 +24,6 @@ public class Entry {
     public String travelDocumentAuthority;
     public Country travelDocumentCountry;
     public Date travelDocumentDate;
-    public Date dateCreated;
     public String r_street;
     public String r_housenumber;
     public String r_apartment;
@@ -45,6 +47,30 @@ public class Entry {
     public Date userDate;
     public String userSignaturePath;
 
+    @DataType(type = DataType.DATETIME)
+    public Date dateCreated;
+
     public User user;
+
+    @Override
+    public String getTableName() {
+        return "Entry";
+    }
+
+    public Entry find(int id) {
+        return (Entry) super.find(id);
+    }
+
+    public Entry find(HashMap<String, Object> attributes) {
+        return (Entry) super.find(attributes);
+    }
+
+    public Entry[] findAll(HashMap<String, Object> attributes) {
+        Object[] models = super.findAll(attributes);
+        ArrayList<Entry> newModels = new ArrayList<>();
+        for (Object model: models) { newModels.add((Entry) model); }
+
+        return newModels.toArray(new Entry[] {});
+    }
 
 }
