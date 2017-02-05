@@ -1,11 +1,12 @@
 package at.fh.valuvi.resifo.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import at.fh.valuvi.resifo.components.BaseModel;
 
-public class Entry extends BaseModel {
+public class Entry extends BaseModel implements Serializable {
 
     public Integer entryId;
     public Integer userID;
