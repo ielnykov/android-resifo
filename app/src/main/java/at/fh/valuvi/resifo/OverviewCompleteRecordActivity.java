@@ -77,6 +77,7 @@ public class OverviewCompleteRecordActivity extends AppCompatActivity {
     }
 
     public void doneOV (View view) {
+        entry.userID = 1;
         entry.save();
 
         Intent intent = new Intent(this, ChooseRecordActivity.class);

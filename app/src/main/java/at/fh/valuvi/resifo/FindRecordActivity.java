@@ -11,23 +11,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import at.fh.valuvi.resifo.models.Entry;
 import at.fh.valuvi.resifo.components.CustomAdapter;
 
 public class FindRecordActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private List<Entry> listEntries;
     private ListView listView;
     private CustomAdapter adapter;
+    private ArrayList<Entry> listEntries = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_record);
 
-        ArrayList<Entry> listEntries = new ArrayList<>();
         Entry[] entries = new Entry().findAll();
         for (Entry entry: entries) {
             listEntries.add(entry);
