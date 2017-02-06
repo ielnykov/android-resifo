@@ -24,13 +24,15 @@
         <activity android:name=".ImpressumActivity"></activity>
         <activity android:name=".InformationActivity"></activity>
         <activity android:name=".NewRecordOverviewActivity"></activity>
-        <activity android:name=".OverviewActivity"></activity>
+        <activity android:name=".OverviewCompleteRecordActivity"></activity>
+        <activity android:name=".OverviewFindRecordActivity"></activity>
         <activity android:name=".PersonalInformationActivity"></activity>
         <activity android:name=".RegistrationActivity"></activity>
         <activity android:name=".RestorePasswordActivity"></activity>
-        <activity android:name=".RestorePassword2Activity"></activity>
+        <activity android:name=".SetPasswordActivity"></activity>
         <activity android:name=".SignInActivity"></activity>
         <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>
