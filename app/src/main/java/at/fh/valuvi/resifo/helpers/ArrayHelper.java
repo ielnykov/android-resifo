@@ -1,5 +1,6 @@
 package at.fh.valuvi.resifo.helpers;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -15,13 +16,17 @@ public class ArrayHelper {
         Iterator<?> iterator = collection.iterator();
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(iterator.next());
 
-        while (iterator.hasNext()) {
-            stringBuilder.append(separator).append(iterator.next());
+        if (iterator.hasNext()) {
+            stringBuilder.append(iterator.next());
+            while (iterator.hasNext()) {
+                stringBuilder.append(separator).append(iterator.next());
+            }
         }
 
         return stringBuilder.toString();
     }
+
+
 
 }

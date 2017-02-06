@@ -1,27 +1,28 @@
 package at.fh.valuvi.resifo.models;
 
+import java.io.Serializable;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import at.fh.valuvi.resifo.components.BaseModel;
 
-public class User extends BaseModel {
+import at.fh.valuvi.resifo.components.BaseRecord;
+import at.fh.valuvi.resifo.helpers.SecurityHelper;
 
+public class User extends BaseRecord implements Serializable {
+
+    @Required
     public String firstName;
+
+    @Required
     public String lastName;
-    public String maidenName;
-    public Date dateOfBirth;
-    public String gender;
-    public String religion;
-    public String placeOfBirth;
-    public Integer maritalStatus;
-    public Country nationality;
-    public String zmr;
-    public String travelDocumentID;
-    public String travelDocumentNumber;
-    public String travelDocumentAuthority;
-    public Country travelDocumentCountry;
-    public Date travelDocumentDate;
+
+    @Required
+    @Email
+    public String email;
+
+    @Required
+    public String password;
 
     @DataType(type = DataType.DATETIME)
     public Date dateCreated = new Date();
@@ -29,6 +30,14 @@ public class User extends BaseModel {
     @Override
     public String getTableName() {
         return "User";
+    }
+
+    public void setPassword(String password) {
+        this.password = User.getPasswordHash(password);
+    }
+
+    public static String getPasswordHash(String password) {
+        return SecurityHelper.md5(password);
     }
 
     public User find(int id) {

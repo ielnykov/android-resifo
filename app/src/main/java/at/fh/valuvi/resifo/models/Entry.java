@@ -4,44 +4,51 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import at.fh.valuvi.resifo.components.BaseModel;
+import at.fh.valuvi.resifo.components.BaseRecord;
 
-public class Entry extends BaseModel implements Serializable {
+public class Entry extends BaseRecord implements Serializable {
 
     public Integer entryId;
     public Integer userID;
+    public String academicTitle;
     public String firstName;
     public String lastName;
     public String maidenName;
     public Date dateOfBirth;
-    public String gender;
+    public String gender = "m";
     public String religion;
     public String placeOfBirth;
-    public Integer martialStatus;
-    public Country nationality;
+    public Integer maritalStatus;
+    public String nationality;
     public String zmr;
     public String travelDocumentID;
     public String travelDocumentNumber;
     public String travelDocumentAuthority;
-    public Country travelDocumentCountry;
+    public String travelDocumentCountry;
     public Date travelDocumentDate;
     public String r_street;
-    public String r_housenumber;
+    public String r_houseNumber;
     public String r_apartment;
     public String r_door;
     public String r_postalCode;
     public String r_city;
-    public String r_mainResidence;
+    public Boolean r_mainResidence;
+    public String r_mainResidenceStreet;
+    public String r_mainResidenceHouseNumber;
+    public String r_mainResidenceApartment;
+    public String r_mainResidenceDoor;
+    public String r_mainResidencePostalCode;
+    public String r_mainResidenceCity;
     public Boolean r_abroad;
-    public Country r_abroadCountry;
+    public String r_abroadCountry;
     public String c_street;
-    public String c_housenumber;
+    public String c_houseNumber;
     public String c_apartment;
     public String c_door;
     public String c_postalCode;
     public String c_city;
     public Boolean c_abroad;
-    public Country c_abroadCountry;
+    public String c_abroadCountry;
     public String landroadName;
     public Date landroadDate;
     public String landroadSignaturePath;
@@ -74,4 +81,7 @@ public class Entry extends BaseModel implements Serializable {
         return newModels.toArray(new Entry[] {});
     }
 
+    public String getRAddress() {
+        return r_street + " " + r_houseNumber + ", " + r_city;
+    }
 }
