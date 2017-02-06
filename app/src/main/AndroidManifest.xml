@@ -34,5 +34,5 @@
         <activity android:name=".SignUpActivity"></activity>
         <activity android:name=".UserActivity"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>

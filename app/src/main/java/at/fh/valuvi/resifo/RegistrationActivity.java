@@ -1,13 +1,25 @@
 package at.fh.valuvi.resifo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import at.fh.valuvi.resifo.components.MyLocationListener;
 import at.fh.valuvi.resifo.models.Entry;
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -15,6 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private Intent intent;
     private Entry entry;
     private ArrayList<String> countries;
+    private LocationManager mlocManager;
 
     EditText getRStreet() { return (EditText) findViewById(R.id.editRStreet); }
     EditText getRHouseNumber() { return (EditText) findViewById(R.id.editRHousenumber); }
@@ -46,6 +59,37 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         loadFromEntry();
+
+        mlocManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        LocationListener mlocListener = new MyLocationListener();
+
+        if (ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED) {
+            mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1, 2, mlocListener);
+        }
+    }
+
+    public void findLocation (View view) {
+        if (ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED) {
+            Location loc = mlocManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            List<Address> addresses = null;
+            Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
+            try {
+                addresses = geocoder.getFromLocation(loc.getLatitude(), loc.getLongitude(), 1);
+            } catch (IOException e) {
+                System.out.println("Oh no!");
+                e.printStackTrace();
+            }
+
+            String address = addresses.get(0).getAddressLine(0);
+            String city = addresses.get(0).getLocality();
+            String postalCode = addresses.get(0).getPostalCode();
+
+            getRStreet().setText(address);
+            getRCity().setText(city);
+            getRPostalCode().setText(postalCode);
+        }
     }
 
     public void backR (View view) {
@@ -99,5 +143,4 @@ public class RegistrationActivity extends AppCompatActivity {
         entry.r_abroad = getAustriaAbroad().isChecked();
         entry.r_abroadCountry = String.valueOf(getAustriaAbroadCountry().getSelectedItem());
     }
-
 }
