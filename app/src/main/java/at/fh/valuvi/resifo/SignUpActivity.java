@@ -4,12 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
+import at.fh.valuvi.resifo.components.Application;
+import at.fh.valuvi.resifo.models.User;
+import at.fh.valuvi.resifo.models.forms.SignUpForm;
 
-/**
- * Created by Lukas Schneider on 04.02.2017.
- */
+public class SignUpActivity extends AppCompatActivity {
 
-public class SignUpActivity extends AppCompatActivity{
+    private TextView getFirstName() { return (TextView) findViewById(R.id.editFirstName); }
+    private TextView getLastName() { return (TextView) findViewById(R.id.editLastName); }
+    private TextView getEMail() { return (TextView) findViewById(R.id.editEmail); }
+    private TextView getPassword() { return (TextView) findViewById(R.id.editPassword); }
+    private TextView getPasswordRepeat() { return (TextView) findViewById(R.id.editPasswordRepeat); }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +24,23 @@ public class SignUpActivity extends AppCompatActivity{
     }
 
     public void confirmation (View view){
-        Intent intent = new Intent(this, ConfirmSignUpActivity.class);
-        startActivity(intent);
+
+        SignUpForm signUpForm = new SignUpForm();
+
+        signUpForm.firstName = getFirstName().getText().toString();
+        signUpForm.lastName = getLastName().getText().toString();
+        signUpForm.email = getEMail().getText().toString();
+        signUpForm.password = getPassword().getText().toString();
+        signUpForm.passwordRepeat = getPasswordRepeat().getText().toString();
+
+        if (signUpForm.createUser()) {
+            Intent intent = new Intent(this, ConfirmSignUpActivity.class);
+            startActivity(intent);
+        } else {
+            Application.showValidationAlert(signUpForm.getErrors(), SignUpActivity.this);
+        }
+
+
     }
+
 }

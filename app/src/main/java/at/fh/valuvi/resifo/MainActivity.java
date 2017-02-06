@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/**
- * Created by Lukas Schneider on 04.02.2017.
- */
+import at.fh.valuvi.resifo.components.Application;
+import at.fh.valuvi.resifo.models.User;
+
 
 public class MainActivity extends AppCompatActivity {
 

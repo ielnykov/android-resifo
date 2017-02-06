@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="at.fh.valuvi.resifo.OverviewActivity">
+    tools:context="at.fh.valuvi.resifo.OverviewCompleteRecordActivity">
     <!--tools:showIn="@layout/activity_overview"-->
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,21 +30,12 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:text="Name"
-                            android:layout_width="match_parent"
-                            android:id="@+id/textView"
-                            android:textAlignment="center"
-                            android:layout_height="70dp"
-                            android:textSize="36sp"
-                            android:paddingTop="10dp" />
-
-                        <TextView
                             android:text="Overview"
                             android:layout_width="match_parent"
                             android:id="@+id/textView"
                             android:textAlignment="center"
                             android:layout_height="match_parent"
-                            android:textSize="25sp"
+                            android:textSize="36sp"
                             android:paddingTop="10dp"
                             android:layout_weight="1" />
 
@@ -63,7 +54,7 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:text="FAMILY NAME or SURNAME, academic title (abbreviated)"
+                        android:text="FAMILY NAME or SURNAME"
                         android:layout_width="wrap_content"
                         android:id="@+id/textView"
                         android:textAlignment="viewStart"
@@ -80,7 +71,33 @@
                         android:layout_height="match_parent"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText" />
+                        android:id="@+id/editLastName"
+                        style="@android:style/Widget.Material.EditText"
+                        android:hint="test" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:text="Academic title (abbreviated)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editAcademicTitle" />
+
                 </TableRow>
 
                 <TableRow
@@ -103,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText2" />
+                        android:id="@+id/editFirstName" />
 
                 </TableRow>
 
@@ -127,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText4" />
+                        android:id="@+id/editMaidenName" />
                 </TableRow>
 
                 <TableRow
@@ -147,10 +164,9 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="01.10.1923"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView9"
+                            android:id="@+id/textDateOfBirth"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
@@ -173,10 +189,9 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="male"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView7"
+                            android:id="@+id/textGender"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
 
@@ -205,7 +220,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText7" />
+                        android:id="@+id/editReligion" />
                 </TableRow>
 
                 <TableRow
@@ -228,7 +243,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText8" />
+                        android:id="@+id/editPlaceOfBirth" />
                 </TableRow>
 
                 <TableRow
@@ -248,10 +263,9 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="surviving civil partner"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView14"
+                            android:id="@+id/textMartialStatus"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
@@ -274,10 +288,9 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="Zimbabwe"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView17"
+                            android:id="@+id/textNationality"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
@@ -303,7 +316,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="number"
                         android:ems="10"
-                        android:id="@+id/editText11" />
+                        android:id="@+id/editZMR" />
                 </TableRow>
 
                 <TableRow
@@ -338,7 +351,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:ems="10"
-                            android:id="@+id/editText13"
+                            android:id="@+id/editTravelDocumentID"
                             android:layout_weight="1" />
                     </LinearLayout>
 
@@ -365,7 +378,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textPersonName"
                             android:ems="10"
-                            android:id="@+id/editText14"
+                            android:id="@+id/editTravelDocumentNumber"
                             android:layout_weight="1" />
                     </LinearLayout>
 
@@ -376,7 +389,7 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:text="issuing authority, country"
+                        android:text="issuing authority"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView22"
@@ -393,7 +406,32 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
                         android:ems="10"
-                        android:id="@+id/editText12" />
+                        android:id="@+id/editTravelDocumentAuthority" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView22"
+                        android:layout_weight="1"
+                        android:text="country" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editTravelDocumentCountry" />
                 </TableRow>
 
                 <TableRow
@@ -413,10 +451,9 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="20.01.2017"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView25"
+                            android:id="@+id/textTravelDocumentDate"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
@@ -449,8 +486,7 @@
                     <TextView
                         android:text="Street(place,square) or town if without street name"
                         android:layout_width="wrap_content"
-                        android:id="@+id/textView21"
-                        android:textAlignment="viewStart"
+                        android:id="@+id/r_street"
                         android:layout_height="wrap_content"
                         android:paddingTop="15pt" />
                 </TableRow>
@@ -462,9 +498,9 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:inputType="textPersonName"
+                        android:inputType="text"
                         android:ems="10"
-                        android:id="@+id/editText" />
+                        android:id="@+id/editRStreet" />
                 </TableRow>
 
                 <TableRow
@@ -475,7 +511,7 @@
                         android:text="Housenumber"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView2" />
+                        android:id="@+id/r_housenumber" />
                 </TableRow>
 
                 <TableRow
@@ -485,9 +521,9 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="text"
                         android:ems="10"
-                        android:id="@+id/editText2" />
+                        android:id="@+id/editRHousenumber" />
 
                 </TableRow>
 
@@ -499,7 +535,7 @@
                         android:text="Apartment building/Stiege"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView3" />
+                        android:id="@+id/r_apartment" />
                 </TableRow>
 
                 <TableRow
@@ -509,9 +545,9 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="text"
                         android:ems="10"
-                        android:id="@+id/editText4" />
+                        android:id="@+id/editRApartment" />
                 </TableRow>
 
                 <TableRow
@@ -519,10 +555,10 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:text="Postal Code"
+                        android:text="Door/apartment number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView12" />
+                        android:id="@+id/r_door" />
                 </TableRow>
 
                 <TableRow
@@ -532,9 +568,32 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+                        android:inputType="text"
                         android:ems="10"
-                        android:id="@+id/editText8" />
+                        android:id="@+id/editRDoor" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:text="Postal code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/r_postalCode" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:ems="10"
+                        android:id="@+id/editRPostalCode" />
                 </TableRow>
 
                 <TableRow
@@ -545,7 +604,7 @@
                         android:text="City/town, federal province"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView18" />
+                        android:id="@+id/r_city" />
                 </TableRow>
 
                 <TableRow
@@ -555,10 +614,11 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="text"
                         android:ems="10"
-                        android:id="@+id/editText11" />
+                        android:id="@+id/editRCity" />
                 </TableRow>
+
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -577,33 +637,12 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="no"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textVMainResidence"
                             android:layout_weight="1"
-                            android:textAlignment="textEnd" />
+                            android:textAlignment="textEnd"
+                            android:id="@+id/textMainResidence" />
 
-                    </LinearLayout>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:text="Main Residence"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textView15"
-                            android:textSize="18sp"
-                            android:layout_margin="10dp" />
                     </LinearLayout>
                 </TableRow>
 
@@ -764,13 +803,52 @@
                             android:layout_weight="1" />
 
                         <TextView
-                            android:text="no"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textVAustriaAbroad"
+                            android:id="@+id/textAustriaAbroad"
                             android:layout_weight="1"
                             android:textAlignment="textEnd" />
                     </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:text="Country of origin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView16"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif" />
+
+                    </LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:ems="10"
+                            android:id="@+id/editRAbroadCountry"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
@@ -801,7 +879,7 @@
                         android:text="Street(place,square) or town if without street name"
                         android:layout_width="wrap_content"
                         android:id="@+id/c_street"
-                        android:textAlignment="viewStart"
+
                         android:layout_height="wrap_content"
                         android:paddingTop="15pt" />
                 </TableRow>
@@ -948,11 +1026,11 @@
                             android:text="Are you moving abroad"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView26"
-                            android:layout_weight="1" />
+                            android:id="@+id/textView16"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif" />
 
                         <TextView
-                            android:text="no"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/textVMAbroad"
@@ -960,10 +1038,49 @@
                             android:textAlignment="textEnd" />
                     </LinearLayout>
                 </TableRow>
+                <TableRow
+                 android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Country you are moving to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView16"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif" />
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                    android:ems="10"
+                            android:id="@+id/editAbroadCountry"
+                            android:layout_weight="1" />
+            </LinearLayout>
+
+        </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                            android:layout_height="match_parent" >
 
                     <LinearLayout
                         android:orientation="horizontal"

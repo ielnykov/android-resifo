@@ -23,19 +23,6 @@
         android:layout_marginBottom="20dp" />
 
     <TextView
-        android:text="Surname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView11" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editSurname" />
-
-    <TextView
         android:text="First Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +34,19 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editFirstName" />
+
+    <TextView
+        android:text="Last Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editLastName" />
 
     <TextView
         android:text="E-Mail"
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editPassword1" />
+        android:id="@+id/editPassword" />
 
     <TextView
         android:text="Confirm Password"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editPassword2" />
+        android:id="@+id/editPasswordRepeat" />
 
     <LinearLayout
         android:orientation="horizontal"

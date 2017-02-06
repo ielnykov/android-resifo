@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
 
     <ImageView
         android:layout_width="match_parent"
@@ -10,37 +12,15 @@
         app:srcCompat="@mipmap/user"
         android:id="@+id/imageView" />
 
-    <EditText
-        android:text="Name"
+    <TextView
+        android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userHeading"
-        android:layout_margin="20dp"
+        android:id="@+id/textName"
+        android:textSize="36sp"
         android:textAlignment="center"
-        android:textSize="40dp" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:text="Last Name:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:layout_weight="6.69"
-            android:layout_margin="10dp" />
-
-        <TextView
-            android:layout_width="259dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewUsername" />
-
-
-
-    </LinearLayout>
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -50,26 +30,48 @@
         android:layout_marginBottom="10dp">
 
         <TextView
-            android:text="E-Mail:"
+            android:text="E-Mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
+            android:id="@+id/textView47"
             android:layout_weight="1"
-            android:layout_margin="10dp" />
+            android:textAlignment="center" />
 
         <TextView
-            android:layout_width="254dp"
+            android:text="power@power.power"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewPassword"
-            android:layout_marginLeft="10dp" />
+            android:id="@+id/textEmail"
+            android:layout_weight="4"
+            android:textAlignment="center" />
 
     </LinearLayout>
 
-    <Button
-        android:text="Change Password"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/changePassword" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:text="Change Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/changePassword"
+                android:onClick="changePW"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorPrimary" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

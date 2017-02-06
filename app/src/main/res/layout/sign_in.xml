@@ -31,7 +31,7 @@
             android:layout_marginBottom="20dp" />
 
         <TextView
-            android:text="Surname or E-Mail"
+            android:text="E-Mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView32" />
@@ -39,9 +39,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress|textPersonName"
+            android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editTextUsernameOrEmail" />
+            android:id="@+id/editEmail" />
 
         <TextView
             android:text="Password"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editTextPassword" />
+            android:id="@+id/editPassword" />
 
         <TextView
             android:text="Restore Password"

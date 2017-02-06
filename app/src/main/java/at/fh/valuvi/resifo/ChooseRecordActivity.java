@@ -4,20 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import at.fh.valuvi.resifo.models.Entry;
 
-/**
- * Created by Lukas Schneider on 04.02.2017.
- */
+public class ChooseRecordActivity extends AppCompatActivity {
 
-public class ChooseRecordActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_record);
     }
 
-    public void newRecord (View view){
+    public void newRecord (View view) {
         Intent intent = new Intent(this, NewRecordOverviewActivity.class);
+        intent.putExtra("entry", new Entry());
         startActivity(intent);
     }
 
@@ -30,4 +29,5 @@ public class ChooseRecordActivity extends AppCompatActivity{
         Intent intent = new Intent(this, InformationActivity.class);
         startActivity(intent);
     }
+
 }
