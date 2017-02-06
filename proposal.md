@@ -1,4 +1,4 @@
-###Time estimation
+### Time estimation
 
 Item     | Value
 -------- | ---:
@@ -21,5 +21,5 @@ Further releases| 15h
 **SUM**| **235h**
 
 ### Total Costs
-####hourly rate = 20€
-####235h*20 = 4700€
+#### hourly rate = 20€
+#### 235h*20 = 4700€

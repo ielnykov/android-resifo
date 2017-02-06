@@ -1,6 +1,6 @@
 ﻿Person;Date;Hours;Description
 valuvi;16.12.2016;0.40;Initiating Phase (Reading project description, sharing tasks,…)
-vielnykov;16.12.2016;0.20;Creating Repository
+vielnikov;16.12.2016;0.20;Creating Repository
 vfortmueller;16.12.2016;0.10;Creating Timesheet
 vielnykov;16.12.2016;0.10;gitignore
 vfortmueller;16.12.2016;0.30;README.md (Instruction)
@@ -9,3 +9,12 @@ lschneider;22.12.2016;2.00;Application Functional Prototyping
 valuvi;23.12.2016;2.00;Project Planning and Documentation in proposal.md
 valuvi;23.12.2016;2.00;Designing App(mock-ups)
 vfortmueller;23.12.2016;1.00;Documentation of mock-ups
+lschneider,vfortmueller;21.01.2017;2.00;Layoutdesign
+valuvi;21.01.2017;3.00;Layout,General approach(cosidering who does what, what will be done when and with what tools)
+lschneider,vfortmueller;01.02.2017;1.00;Creating and filling tables in sqlite
+vielnikov;01.02.2017;3.00;Connecting database with application
+lschneider,vfortmueller;03.02.2017;5.00; Creating xml-files and according activities
+lschneider,vfortmueller;04.02.2017;10.00; Creating xml-files and according activities
+vielnikov;04.02.1017;10.00;
+
+
