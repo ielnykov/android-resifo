@@ -26,7 +26,6 @@ public class SetPasswordActivity extends AppCompatActivity {
     }
 
     public void confirmNewPassword (View view) {
-
         SetPasswordForm setPasswordForm = new SetPasswordForm(user);
         setPasswordForm.password = getPassword().getText().toString();
         setPasswordForm.passwordRepeat = getPasswordRepeat().getText().toString();
