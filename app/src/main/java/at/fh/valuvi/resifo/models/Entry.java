@@ -86,8 +86,7 @@ public class Entry extends BaseRecord implements Serializable {
     public Boolean c_abroad;
     public String c_abroadCountry;
 
-    @Required
-    public Date userDate;
+    public Date userDate = new Date();
 
     @DataType(type = DataType.DATETIME)
     public Date dateCreated;
@@ -122,6 +121,6 @@ public class Entry extends BaseRecord implements Serializable {
     }
 
     public String getRAddress() {
-        return r_street + " " + r_houseNumber + ", " + r_city;
+        return r_street + ", " + r_city;
     }
 }
