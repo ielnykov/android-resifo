@@ -25,7 +25,7 @@ public class SetPasswordActivity extends AppCompatActivity {
         user = (User) intent.getSerializableExtra("user");
     }
 
-    public void confirmNewPassword (View view){
+    public void confirmNewPassword (View view) {
 
         SetPasswordForm setPasswordForm = new SetPasswordForm(user);
         setPasswordForm.password = getPassword().getText().toString();
@@ -38,4 +38,5 @@ public class SetPasswordActivity extends AppCompatActivity {
             Application.showValidationAlert(setPasswordForm.getErrors(), SetPasswordActivity.this);
         }
     }
+
 }

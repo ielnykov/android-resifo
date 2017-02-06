@@ -5,11 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/**
- * Created by Lukas Schneider on 04.02.2017.
- */
-
-public class ImpressumActivity extends AppCompatActivity{
+public class ImpressumActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +17,5 @@ public class ImpressumActivity extends AppCompatActivity{
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
+
 }

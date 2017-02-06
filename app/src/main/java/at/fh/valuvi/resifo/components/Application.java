@@ -2,12 +2,9 @@ package at.fh.valuvi.resifo.components;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v4.internal.view.SupportSubMenu;
 import android.support.v7.app.AlertDialog;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import at.fh.valuvi.resifo.SignUpActivity;
 import at.fh.valuvi.resifo.helpers.ArrayHelper;
 
 public class Application extends android.app.Application {

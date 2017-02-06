@@ -1,6 +1,5 @@
 package at.fh.valuvi.resifo.components;
 
-import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.io.BufferedReader;

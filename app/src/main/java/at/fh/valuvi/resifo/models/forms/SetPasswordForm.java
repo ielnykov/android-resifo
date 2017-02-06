@@ -26,5 +26,4 @@ public class SetPasswordForm extends BaseForm {
         return user.save();
     }
 
-
 }

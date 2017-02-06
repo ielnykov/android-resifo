@@ -27,72 +27,11 @@ public class FindRecordActivity extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_record);
 
-        Entry entry1 = new Entry();
-        Entry entry2 = new Entry();
-        Entry entry3 = new Entry();
-        Entry entry4 = new Entry();
-        Entry entry5 = new Entry();
-        Entry entry6 = new Entry();
-        Entry entry7 = new Entry();
-        Entry entry8 = new Entry();
-        Entry entry9 = new Entry();
-
-        entry1.userDate = new Date();
-        entry1.r_street = "Dostojewskogo";
-        entry1.r_houseNumber = "22";
-        entry1.r_city = "Moskau";
-
-        entry2.userDate = new Date();
-        entry2.r_street = "Herrengasse";
-        entry2.r_houseNumber = "4";
-        entry2.r_city = "Wien";
-
-        entry3.userDate = new Date();
-        entry3.r_street = "Karl Marks Straße";
-        entry3.r_houseNumber = "1";
-        entry3.r_city = "Berlin";
-
-        entry4.userDate = new Date();
-        entry4.r_street = "Dostojewskogo";
-        entry4.r_houseNumber = "22";
-        entry4.r_city = "Moskau";
-
-        entry5.userDate = new Date();
-        entry5.r_street = "Herrengasse";
-        entry5.r_houseNumber = "4";
-        entry5.r_city = "Wien";
-
-        entry6.userDate = new Date();
-        entry6.r_street = "Karl Marks Straße";
-        entry6.r_houseNumber = "1";
-        entry6.r_city = "Berlin";
-
-        entry7.userDate = new Date();
-        entry7.r_street = "Dostojewskogo";
-        entry7.r_houseNumber = "22";
-        entry7.r_city = "Moskau";
-
-        entry8.userDate = new Date();
-        entry8.r_street = "Herrengasse";
-        entry8.r_houseNumber = "4";
-        entry8.r_city = "Wien";
-
-        entry9.userDate = new Date();
-        entry9.r_street = "Karl Marks Straße";
-        entry9.r_houseNumber = "1";
-        entry9.r_city = "Berlin";
-
-
-        listEntries = new ArrayList<Entry>();
-        listEntries.add(entry1);
-        listEntries.add(entry2);
-        listEntries.add(entry3);
-        listEntries.add(entry4);
-        listEntries.add(entry5);
-        listEntries.add(entry6);
-        listEntries.add(entry7);
-        listEntries.add(entry8);
-        listEntries.add(entry9);
+        ArrayList<Entry> listEntries = new ArrayList<>();
+        Entry[] entries = new Entry().findAll();
+        for (Entry entry: entries) {
+            listEntries.add(entry);
+        }
 
         listView = (ListView) findViewById(R.id.entryList);
 

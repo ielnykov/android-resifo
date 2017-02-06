@@ -44,4 +44,5 @@ public class SignInActivity extends AppCompatActivity {
             Application.showAlert("E-mail or/and password is invalid", "Authentication", SignInActivity.this);
         }
     }
+
 }

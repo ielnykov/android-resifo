@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
-
 import java.util.ArrayList;
-
 import at.fh.valuvi.resifo.models.Entry;
 
 public class CancellationActivity extends AppCompatActivity {
@@ -43,7 +41,7 @@ public class CancellationActivity extends AppCompatActivity {
         loadFromEntry();
     }
 
-    public void backC(View view){
+    public void backC(View view) {
         saveToEntry();
 
         Intent intent = new Intent(this, RegistrationActivity.class);
@@ -51,7 +49,7 @@ public class CancellationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void forwardC(View view){
+    public void forwardC(View view) {
         saveToEntry();
 
         Intent intent = new Intent(this, NewRecordOverviewActivity.class);

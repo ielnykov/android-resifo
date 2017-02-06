@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import at.fh.valuvi.resifo.helpers.ArrayHelper;
+import at.fh.valuvi.resifo.helpers.DateHelper;
 
 public class BaseRecord extends BaseModel {
 
@@ -35,9 +36,9 @@ public class BaseRecord extends BaseModel {
                 if (field.getType().isAssignableFrom(Date.class)) {
                     DataType dataType = field.getAnnotation(DataType.class);
                     if (dataType != null && dataType.type() == DataType.DATETIME) {
-                        values.put(field.getName(), getDbDateTimeString((Date) value));
+                        values.put(field.getName(), DateHelper.getDbDateTimeString((Date) value));
                     } else {
-                        values.put(field.getName(), getDbDateString((Date) value));
+                        values.put(field.getName(), DateHelper.getDbDateString((Date) value));
                     }
                 } else { // Other data types
                     values.put(field.getName(), String.valueOf(field.get(this)));
@@ -53,11 +54,14 @@ public class BaseRecord extends BaseModel {
             db.update(getTableName(), values, "id=?", new String[] {String.valueOf(id)});
         }
 
+        db.close();
+
         return true;
     }
 
     public void delete() {
         db.delete(getTableName(), "id=?", new String[] {String.valueOf(id)});
+        db.close();
     }
 
     public Object find(int id) {
@@ -154,7 +158,14 @@ public class BaseRecord extends BaseModel {
         for (Field field: getFields()) {
             try {
                 String value = cursor.getString(cursor.getColumnIndex(field.getName()));
-                field.set(model, value);
+
+                if (field.getType().isAssignableFrom(Date.class)) {
+                    field.set(model, DateHelper.getDateFromDbDateString(value));
+                } else if (field.getType().isAssignableFrom(Boolean.class) && !value.equals("")) {
+                    field.set(model, Boolean.valueOf(value));
+                } else if (field.getType().isAssignableFrom(Integer.class) && !value.equals("")) {
+                    field.set(model, Integer.parseInt(value));
+                } else { field.set(model, value); }
             } catch(Exception e) { System.out.println(e); }
         }
 

@@ -1,7 +1,6 @@
 package at.fh.valuvi.resifo.models.forms;
 
 import java.util.HashMap;
-
 import at.fh.valuvi.resifo.components.BaseForm;
 import at.fh.valuvi.resifo.models.User;
 
@@ -22,11 +21,11 @@ public class RestorePasswordForm extends BaseForm {
     public Boolean restore() {
         if (!super.validate()) { return false; }
 
-        return !getUser().equals(null);
+        return getUser() != null;
     }
 
     public User getUser() {
-        if (!user.equals(null)) { return user; }
+        if (user != null) { return user; }
 
         HashMap<String, Object> attributes = new HashMap<>();
         attributes.put("firstName" , firstName);

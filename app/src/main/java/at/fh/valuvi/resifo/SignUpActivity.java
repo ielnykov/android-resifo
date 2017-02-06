@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import at.fh.valuvi.resifo.components.Application;
-import at.fh.valuvi.resifo.models.User;
 import at.fh.valuvi.resifo.models.forms.SignUpForm;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -23,8 +22,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.sign_up);
     }
 
-    public void confirmation (View view){
-
+    public void confirmation (View view) {
         SignUpForm signUpForm = new SignUpForm();
 
         signUpForm.firstName = getFirstName().getText().toString();
@@ -39,8 +37,6 @@ public class SignUpActivity extends AppCompatActivity {
         } else {
             Application.showValidationAlert(signUpForm.getErrors(), SignUpActivity.this);
         }
-
-
     }
 
 }

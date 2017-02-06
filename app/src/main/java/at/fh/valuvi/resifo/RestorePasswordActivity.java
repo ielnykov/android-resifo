@@ -27,7 +27,7 @@ public class RestorePasswordActivity extends AppCompatActivity {
         restorePasswordForm.lastName = getLastName().getText().toString();
         restorePasswordForm.email = getEMail().getText().toString();
 
-        if (restorePasswordForm.restore()){
+        if (restorePasswordForm.restore()) {
             Intent intent = new Intent(this, SetPasswordActivity.class);
             intent.putExtra("user", restorePasswordForm.getUser());
             startActivity(intent);
@@ -35,4 +35,5 @@ public class RestorePasswordActivity extends AppCompatActivity {
             Application.showAlert("No user with these attributes found", "Restore Password", RestorePasswordActivity.this);
         }
     }
+
 }

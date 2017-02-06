@@ -48,7 +48,7 @@ public class RegistrationActivity extends AppCompatActivity {
         loadFromEntry();
     }
 
-    public void backR (View view){
+    public void backR (View view) {
         saveToEntry();
 
         Intent intent = new Intent(this, PersonalInformationActivity.class);
@@ -56,7 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void forwardR (View view){
+    public void forwardR (View view) {
         saveToEntry();
 
         Intent intent = new Intent(this, CancellationActivity.class);
@@ -99,4 +99,5 @@ public class RegistrationActivity extends AppCompatActivity {
         entry.r_abroad = getAustriaAbroad().isChecked();
         entry.r_abroadCountry = String.valueOf(getAustriaAbroadCountry().getSelectedItem());
     }
+
 }

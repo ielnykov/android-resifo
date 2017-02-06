@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import at.fh.valuvi.resifo.components.Application;
-import at.fh.valuvi.resifo.models.User;
-
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,18 +13,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_startup);
     }
 
-    public void signUp (View view){
+    public void signUp (View view) {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 
-    public void signIn (View view){
+    public void signIn (View view) {
         Intent intent = new Intent (this, SignInActivity.class);
         startActivity(intent);
     }
 
-    public void impressum (View view){
+    public void impressum (View view) {
         Intent intent = new Intent (this, ImpressumActivity.class);
         startActivity(intent);
     }
+
 }

@@ -48,4 +48,5 @@ public class NewRecordOverviewActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ChooseRecordActivity.class);
         startActivity(intent);
     }
+
 }

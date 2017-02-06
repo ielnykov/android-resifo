@@ -1,11 +1,9 @@
 package at.fh.valuvi.resifo.models;
 
 import java.io.Serializable;
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-
 import at.fh.valuvi.resifo.components.BaseRecord;
 import at.fh.valuvi.resifo.helpers.SecurityHelper;
 
@@ -46,6 +44,12 @@ public class User extends BaseRecord implements Serializable {
 
     public User find(HashMap<String, Object> attributes) {
         return (User) super.find(attributes);
+    }
+
+    public User[] findAll() {
+        HashMap<String, Object> attributes = new HashMap<>();
+
+        return findAll(attributes);
     }
 
     public User[] findAll(HashMap<String, Object> attributes) {

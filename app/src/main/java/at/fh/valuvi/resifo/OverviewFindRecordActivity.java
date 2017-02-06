@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import at.fh.valuvi.resifo.models.Entry;
 
 public class OverviewFindRecordActivity extends AppCompatActivity {
@@ -144,4 +143,5 @@ public class OverviewFindRecordActivity extends AppCompatActivity {
         getCMovingAbroad().setText(entry.c_abroad ? "yes" : "no");
         getCAbroadCountry().setText(entry.c_abroadCountry.toString());
     }
+
 }

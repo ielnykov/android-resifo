@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-
 import at.fh.valuvi.resifo.models.User;
 
 public class UserActivity extends AppCompatActivity {
@@ -30,4 +29,5 @@ public class UserActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SetPasswordActivity.class);
         startActivity(intent);
     }
+
 }

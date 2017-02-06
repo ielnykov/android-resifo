@@ -1,11 +1,9 @@
 package at.fh.valuvi.resifo.components;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BaseModel {
@@ -31,10 +29,6 @@ public class BaseModel {
 
     public @interface Unique {}
 
-    public @interface AllowedValues {
-        public String[] values();
-    }
-
     protected HashMap<String, String> errors = new HashMap<>();
 
     public Boolean validate() {
@@ -45,13 +39,13 @@ public class BaseModel {
                 Email emailValidator = field.getAnnotation(Email.class);
                 Equal equalValidator = field.getAnnotation(Equal.class);
                 Unique uniqueValidator = field.getAnnotation(Unique.class);
-                AllowedValues allowedValidator = field.getAnnotation(AllowedValues.class);
 
                 String fieldName = field.getName();
+                Class<?> fieldType = field.getType();
                 Object fieldValue = field.get(this);
 
                 // Required Validation
-                if (requiredValidator != null && fieldValue.equals("")) {
+                if (requiredValidator != null && (fieldValue == null || fieldValue.equals(""))) {
                     addError(fieldName, String.format("Field %s cannot be blank", fieldName));
                 }
 
@@ -80,7 +74,10 @@ public class BaseModel {
                 // Email Validation
                 if (emailValidator != null) {
                     Pattern regex = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-
+                    Matcher matcher = regex.matcher((String) fieldValue);
+                    if (!matcher.find()){
+                        addError(fieldName, String.format("Field %s has wrong e-mail format", fieldName));
+                    }
                 }
 
                 // Equal Validation
@@ -114,18 +111,6 @@ public class BaseModel {
     }
 
     public HashMap<String, String> getErrors() { return errors; }
-
-    protected String getDbDateString(Date date) {
-        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
-
-        return fmt.format(date);
-    }
-
-    protected String getDbDateTimeString(Date date) {
-        SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-        return fmt.format(date);
-    }
 
     protected Object getNewModelInstance() {
         Object model = new Object();

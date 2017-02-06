@@ -8,9 +8,7 @@ import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-
 import java.util.ArrayList;
-
 import at.fh.valuvi.resifo.helpers.DateHelper;
 import at.fh.valuvi.resifo.models.Entry;
 
@@ -55,7 +53,7 @@ public class PersonalInformationActivity extends AppCompatActivity {
         loadFromEntry();
     }
 
-    public void backPI (View view){
+    public void backPI (View view) {
         saveToEntry();
 
         Intent intent = new Intent(this, NewRecordOverviewActivity.class);

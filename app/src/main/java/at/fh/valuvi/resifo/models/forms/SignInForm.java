@@ -24,8 +24,6 @@ public class SignInForm extends BaseForm {
             System.out.println((String) v);
         }
 
-
-
         return new User().find(attributes) != null;
     }
 

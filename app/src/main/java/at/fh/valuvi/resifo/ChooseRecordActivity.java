@@ -20,12 +20,12 @@ public class ChooseRecordActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void findRecord (View view){
+    public void findRecord (View view) {
         Intent intent = new Intent(this, FindRecordActivity.class);
         startActivity(intent);
     }
 
-    public void information (View view){
+    public void information (View view) {
         Intent intent = new Intent(this, InformationActivity.class);
         startActivity(intent);
     }
